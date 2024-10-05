@@ -2,6 +2,9 @@ using System;
 
 namespace OOPProject.Classes;
 
+/// <summary>
+/// Class for a book, for using Encapsulation and Inheritance OOP principle
+/// </summary>
 public class Book
 {
     #region Backing Fields
