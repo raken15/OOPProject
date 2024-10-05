@@ -3,7 +3,7 @@ using System;
 namespace OOPProject.Classes;
 
 /// <summary>
-/// Class for Customer Member, for using Polymorphism OOP principle
+/// Class for Customer Member, for using Polymorphism and Inheritance OOP principle
 /// </summary>
 public class CustomerMember : LibraryMember
 {
