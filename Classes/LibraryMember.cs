@@ -112,7 +112,7 @@ public class LibraryMember : IMember
         book.ReturnToLibrary();
         _borrowedBooks.Remove(book);
     }
-    public void DisplayMember(){
+    public virtual void DisplayMember(){
         Console.WriteLine("Name: " + Name);
         Console.WriteLine("Email: " + Email);
         Console.WriteLine("Phone Number: " + PhoneNumber);
