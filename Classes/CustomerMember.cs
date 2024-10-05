@@ -2,6 +2,9 @@ using System;
 
 namespace OOPProject.Classes;
 
+/// <summary>
+/// Class for Customer Member, for using Polymorphism OOP principle
+/// </summary>
 public class CustomerMember : LibraryMember
 {
     public CustomerMember() : base()
