@@ -16,8 +16,7 @@ public interface IBook
 
     #endregion
     #region Methods
-    public void Borrow();
-    public void Return();
-    public void ReadDescription();
+    public bool TryToBorrow();
+    public void ReturnToLibrary();
     #endregion
 }
