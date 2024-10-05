@@ -1,11 +1,12 @@
 using System;
+using OOPProject.Interfaces;
 
 namespace OOPProject.Classes;
 
 /// <summary>
 /// Class for a book, for using Encapsulation and Inheritance OOP principle
 /// </summary>
-public class Book
+public class Book : IBook
 {
     #region Backing Fields
     private string _title;
@@ -61,14 +62,22 @@ public class Book
 
     #endregion
     #region Methods
-    public void Borrow(){
-        throw new NotImplementedException();
+    public bool TryToBorrow(){
+        if (IsAvailable)
+        {
+            IsAvailable = false;
+            Console.WriteLine($"{Title} has been successfully borrowed now.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine($"{Title} is currently unavailable.");
+            return false;
+        }
     }
-    public void Return(){
-        throw new NotImplementedException();
-    }
-    public void ReadDescription(){
-        throw new NotImplementedException();
+    public void ReturnToLibrary(){
+        IsAvailable = true;
+        Console.WriteLine($"{Title} has been successfully returned.");
     }
     #endregion
 
