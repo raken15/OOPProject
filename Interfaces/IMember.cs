@@ -4,7 +4,10 @@ using OOPProject.Classes;
 namespace OOPProject.Interfaces;
 
 /// <summary>
-/// Interface for a member, for using Abstraction OOP principle
+/// Defines the IMember interface, abstracting member properties and behavior, 
+/// promoting encapsulation, inheritance, and polymorphism, 
+/// and establishing a common framework for all member implementations, 
+/// enabling extensibility and modularity through interface-based design.
 /// </summary>
 public interface IMember
 {
@@ -13,12 +16,12 @@ public interface IMember
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
     public DateTime DateOfBirth { get; set; }
-    public List<Book> BorrowedBooks { get; set; }
+    public List<IBook> BorrowedIBooks { get; set; }
     public string Role { get; set; }
     #endregion
     #region Methods
-    public void BorrowBook(Book book);
-    public void ReturnBook(Book book);
+    public void BorrowBook(IBook iBook, Library library);
+    public void ReturnBook(IBook iBook, Library library);
     public void DisplayMember();
     #endregion
 }
