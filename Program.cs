@@ -34,8 +34,22 @@ customerMember.BorrowBook(book, library); // testing that the member can't borro
 workerMember.ReturnBook(book, library);
 library.DisplayAvailableBooks();
 customerMember.BorrowBook(book, library);
-childrenBook.GetDetails();
-book.GetDetails();
-book2.GetDetails();
-workerMember.DisplayMember();
-customerMember.DisplayMember();
+foreach (var libraryBook in library.Books)
+{
+    libraryBook.GetDetails();
+    if(libraryBook is ChildrenBook)
+    {
+        if((libraryBook as ChildrenBook).HasHappyEnding())
+        {
+            Console.WriteLine($"The book {libraryBook.Title} has a happy ending");
+        }
+        else
+        {
+            Console.WriteLine($"The book {libraryBook.Title} doesn't have a happy ending");
+        }
+    }
+}
+foreach (var member in library.Members)
+{
+    member.DisplayMember();
+}
