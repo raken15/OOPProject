@@ -140,6 +140,7 @@ public class LibraryMember : IMember
         _borrowedIBooks.Remove(iBook);
     }
     public virtual void DisplayMember(){
+        Console.WriteLine("-----Member Details-----");
         Console.WriteLine("Name: " + Name);
         Console.WriteLine("Email: " + Email);
         Console.WriteLine("Phone Number: " + PhoneNumber);

@@ -11,6 +11,7 @@ public class WorkerMember : LibraryMember
 
     public override void DisplayMember()
     {
+        Console.WriteLine("-----Member Details-----");
         Console.WriteLine("Name: " + Name);
         Console.WriteLine("Borrowed Books: " + BorrowedIBooks.Count);
         Console.WriteLine("Phone Number: " + PhoneNumber);

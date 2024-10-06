@@ -101,6 +101,7 @@ public class BaseBook : IBook
         Console.WriteLine($"{Title} has been successfully returned.");
     }
     public virtual void GetDetails(){
+        Console.WriteLine("-----Book Details-----");
         Console.WriteLine($"Title: {Title}");
         Console.WriteLine($"Author: {Author}");
         Console.WriteLine($"Pages Amount: {PagesAmount}");
