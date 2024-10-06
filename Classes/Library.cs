@@ -27,6 +27,26 @@ public class Library
         Books.Add(iBook);
         Console.WriteLine($"{iBook.Title} added to the library.");
     }
+
+    public void RemoveBookFromAvailableBooks(IBook iBook){
+        if (!Books.Contains(iBook))
+        {
+            Console.WriteLine($"{iBook.Title} is not in the library.");
+            return;
+        }
+        Books[Books.IndexOf(iBook)].IsAvailable = false;
+        Console.WriteLine($"{iBook.Title} removed from the available books of the library.");
+    }
+    public void MakeBookAvailable(IBook iBook)
+    {
+        if (!Books.Contains(iBook))
+        {
+            Console.WriteLine($"{iBook.Title} is not in the library.");
+            return;
+        }
+        Books[Books.IndexOf(iBook)].IsAvailable = true;
+        Console.WriteLine($"{iBook.Title} made available.");
+    }
     public void RegisterMember(IMember iMember)
     {
         if (Members.Contains(iMember))
@@ -43,10 +63,15 @@ public class Library
         if(availableBooks.Count == 0){
             Console.WriteLine("No books are available");
         }
-        Console.WriteLine("Available books:");
-        foreach (var book in availableBooks)
+        else
         {
-            Console.WriteLine(book.Title);
+            Console.Write("Available books: {");
+            foreach (var book in availableBooks)
+            {
+                Console.Write(book.Title);
+                Console.Write(", ");
+            }
+            Console.WriteLine("}");
         }
     }
 

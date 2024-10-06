@@ -7,14 +7,7 @@ namespace OOPProject.Classes;
 /// </summary>
 public class WorkerMember : LibraryMember
 {
-    // public WorkerMember() : base()
-    // {
-    // }
-
-    // public WorkerMember(string name, string email, string phoneNumber, DateTime dateOfBirth, string role) 
-    // : base(name, email, phoneNumber, dateOfBirth, role)
-    // {
-    // }
+    public WorkerMember() : base("Worker", "worker@example.com", "1234567890", DateTime.Now, "Worker") { }
 
     public override void DisplayMember()
     {

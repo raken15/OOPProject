@@ -7,8 +7,7 @@ namespace OOPProject.Classes;
 /// </summary>
 public class CustomerMember : LibraryMember
 {
-    public CustomerMember() : base()
-    {
+    public CustomerMember() : base("Customer", "customer@example.com", "1234567890", DateTime.Now, "Customer") {
     }
 
     public CustomerMember(string name, string email, string phoneNumber, DateTime dateOfBirth, string role) 
