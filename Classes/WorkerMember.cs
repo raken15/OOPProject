@@ -3,7 +3,11 @@ using System;
 namespace OOPProject.Classes;
 
 /// <summary>
-/// Class for Customer Member, for using Polymorphism and Inheritance OOP principle
+/// Defines the WorkerMember class, inheriting from LibraryMember and specializing in worker member behavior, 
+/// demonstrating inheritance by building upon the LibraryMember class, 
+/// utilizing polymorphism through method overriding, 
+/// and showcasing encapsulation by hiding implementation details, 
+/// enabling extensibility and modularity through object-oriented design.
 /// </summary>
 public class WorkerMember : LibraryMember
 {

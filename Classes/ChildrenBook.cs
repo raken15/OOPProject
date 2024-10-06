@@ -1,7 +1,13 @@
 using System;
 
 namespace OOPProject.Classes;
-
+/// <summary>
+/// Defines the ChildrenBook class, inheriting from BaseBook and specializing in children's book behavior, 
+/// demonstrating inheritance by building upon the BaseBook class, 
+/// utilizing polymorphism through method overriding, 
+/// and showcasing encapsulation by hiding implementation details, 
+/// enabling extensibility and modularity through object-oriented design.
+/// </summary>
 public class ChildrenBook : BaseBook
 {
     #region Backing Fields

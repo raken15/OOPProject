@@ -1,7 +1,25 @@
-﻿/// <summary>
-/// This program demonstrates the usage of a library management system.
-/// It creates a library, adds books, registers members, and performs borrowing and returning operations.
-/// it also tests for failure states and the displays and operations are working as expected
+﻿/// <author>
+/// Raviv Yotvat 06/10/2024
+/// </author>
+/// 
+/// <summary>
+/// Defines the Program class, serving as the entry point for the library management system, 
+/// demonstrating the application of object-oriented programming principles to create a modular and extensible system, 
+/// utilizing encapsulation to hide implementation details, 
+/// and showcasing polymorphism through the use of inheritance and method overriding to provide specialized behavior for different types of books and members, 
+/// and composition to create a library object that contains collections of books and members, 
+/// enabling a flexible and maintainable design through the use of abstraction, 
+/// and providing a clear and concise interface for interacting with the library system.
+/// 
+/// The Program class is responsible for initializing the library system, 
+/// creating instances of books and members, 
+/// and providing a menu-driven interface for users to interact with the system, 
+/// including options to add books to the library, 
+/// register new members, 
+/// borrow and return books, 
+/// display book and member information, 
+/// and test the system for failure states, such as attempting to borrow a book 
+/// that is already checked out or registering a member with invalid information.
 /// </summary>
 using OOPProject.Classes;
 

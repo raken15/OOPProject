@@ -6,8 +6,8 @@ namespace OOPProject.Classes;
 /// <summary>
 /// Defines the Book class, inheriting from BaseBook and implementing specific book behavior, 
 /// demonstrating inheritance by building upon the BaseBook class, 
-/// utilizing encapsulation to hide book data, 
-/// and showcasing abstraction by providing a concrete implementation of the IBook interface, 
+/// utilizing polymorphism through method overriding, 
+/// and showcasing encapsulation by hiding implementation details, 
 /// enabling extensibility and modularity through object-oriented design.
 /// </summary>
 public class Book : BaseBook

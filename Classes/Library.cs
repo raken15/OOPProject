@@ -4,7 +4,12 @@ using OOPProject.Interfaces;
 namespace OOPProject.Classes;
 
 /// <summary>
-/// Class for a library, for using Encapsulation and Inheritance OOP principle
+/// Defines the Library class, encapsulating library properties and behavior, 
+/// demonstrating composition by containing collections of books and members, 
+/// utilizing encapsulation to hide implementation details, 
+/// and showcasing abstraction by providing a high-level interface for managing library operations, 
+/// such as borrowing and returning books, without exposing the underlying implementation details, 
+/// enabling extensibility and modularity through object-oriented design.
 /// </summary>
 public class Library
 {
