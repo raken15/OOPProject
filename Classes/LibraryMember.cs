@@ -16,7 +16,7 @@ public class LibraryMember : IMember
     private string _email;
     private string _phoneNumber;
     private DateTime _dateOfBirth;
-    private List<Book> _borrowedBooks;
+    private List<IBook> _borrowedIBooks;
     private string _role;
     #endregion
 
@@ -48,7 +48,7 @@ public class LibraryMember : IMember
     {
         get => _dateOfBirth;
         set { 
-            if (value == null || value == DateTime.MinValue)
+            if (value == default || value == DateTime.MinValue)
             {
                 throw new ArgumentNullException($"{nameof(DateOfBirth)} cannot be empty or null.", nameof(value)); 
             }
@@ -59,10 +59,10 @@ public class LibraryMember : IMember
             _dateOfBirth = value; 
         }
     }
-    public List<Book> BorrowedBooks
+    public List<IBook> BorrowedIBooks
     {
-        get => _borrowedBooks;
-        set => _borrowedBooks = value ?? throw new ArgumentNullException(nameof(BorrowedBooks), $"{nameof(BorrowedBooks)} cannot be null");
+        get => _borrowedIBooks;
+        set => _borrowedIBooks = value ?? throw new ArgumentNullException(nameof(BorrowedIBooks), $"{nameof(BorrowedIBooks)} cannot be null");
     }
     public string Role
     {
@@ -83,6 +83,7 @@ public class LibraryMember : IMember
         PhoneNumber = "1234567890";
         DateOfBirth = new DateTime(1990, 1, 1);
         Role = "Member";
+        BorrowedIBooks = new List<IBook>();
     }
     public LibraryMember(string name, string email, string phoneNumber, DateTime dateOfBirth, string role)
     {
@@ -91,26 +92,27 @@ public class LibraryMember : IMember
         PhoneNumber = phoneNumber;
         DateOfBirth = dateOfBirth;
         Role = role;
+        BorrowedIBooks = new List<IBook>();
     }
 
     #endregion
-    #region Methods
-    public void BorrowBook(Book book)
+    #region Public Methods
+    public void BorrowBook(IBook iBook)
     {
-        if(_borrowedBooks.Contains(book)){
+        if(_borrowedIBooks.Contains(iBook)){
             throw new InvalidOperationException("The book is already borrowed by this member");
         }
-        if(book.TryToBorrow()){
-            _borrowedBooks.Add(book);
+        if(iBook.TryToBorrow()){
+            _borrowedIBooks.Add(iBook);
         }
     }
 
-    public void ReturnBook(Book book)
+    public void ReturnBook(IBook iBook)
     {
-        if (!_borrowedBooks.Contains(book))
+        if (!_borrowedIBooks.Contains(iBook))
             throw new InvalidOperationException("The book is not borrowed by this member");
-        book.ReturnToLibrary();
-        _borrowedBooks.Remove(book);
+        iBook.ReturnToLibrary();
+        _borrowedIBooks.Remove(iBook);
     }
     public virtual void DisplayMember(){
         Console.WriteLine("Name: " + Name);
@@ -118,7 +120,7 @@ public class LibraryMember : IMember
         Console.WriteLine("Phone Number: " + PhoneNumber);
         Console.WriteLine("Date of Birth: " + DateOfBirth);
         Console.WriteLine("Role: " + Role);
-        Console.WriteLine("Borrowed Books: " + _borrowedBooks.Count);
+        Console.WriteLine("Borrowed Books: " + _borrowedIBooks.Count);
     }
     #endregion
 }

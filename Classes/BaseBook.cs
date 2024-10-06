@@ -43,7 +43,7 @@ public class BaseBook : IBook
     {
         get { return _publishDate; }
         set { 
-            if (value == null || value == DateTime.MinValue)
+            if (value == default || value == DateTime.MinValue)
             {
                 throw new ArgumentNullException("Publish date can't be empty or null."); 
             }

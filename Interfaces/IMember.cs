@@ -13,12 +13,12 @@ public interface IMember
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
     public DateTime DateOfBirth { get; set; }
-    public List<Book> BorrowedBooks { get; set; }
+    public List<IBook> BorrowedIBooks { get; set; }
     public string Role { get; set; }
     #endregion
     #region Methods
-    public void BorrowBook(Book book);
-    public void ReturnBook(Book book);
+    public void BorrowBook(IBook iBook);
+    public void ReturnBook(IBook iBook);
     public void DisplayMember();
     #endregion
 }

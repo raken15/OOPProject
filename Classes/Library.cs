@@ -39,9 +39,14 @@ public class Library
     }
     public void DisplayAvailableBooks()
     {
-        foreach (var book in Books.Where(b => b.IsAvailable))
+        var availableBooks = Books.Where(b => b.IsAvailable).ToList();
+        if(availableBooks.Count == 0){
+            Console.WriteLine("No books are available");
+        }
+        Console.WriteLine("Available books:");
+        foreach (var book in availableBooks)
         {
-            Console.WriteLine(book);
+            Console.WriteLine(book.Title);
         }
     }
 
