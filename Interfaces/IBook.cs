@@ -13,10 +13,10 @@ public interface IBook
     public int PagesAmount { get; set; }
     public DateTime PublishDate { get; set; }
     public bool IsAvailable { get; set; }
-
     #endregion
-    #region Methods
+    #region Public Methods
     public bool TryToBorrow();
     public void ReturnToLibrary();
+    public void GetDetails();
     #endregion
 }
