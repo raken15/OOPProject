@@ -3,7 +3,10 @@ using System;
 namespace OOPProject.Interfaces;
 
 /// <summary>
-/// Interface for a book, for using abstraction principle
+/// Defines the IBook interface, abstracting book properties and behavior, 
+/// promoting encapsulation, inheritance, and polymorphism, 
+/// and establishing a common framework for all book implementations
+/// enabling extensibility and modularity through interface-based design.
 /// </summary>
 public interface IBook
 {
