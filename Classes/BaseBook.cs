@@ -4,7 +4,11 @@ using OOPProject.Interfaces;
 namespace OOPProject.Classes;
 
 /// <summary>
-/// Class for a book, for using Encapsulation and Inheritance OOP principle
+/// Defines the BaseBook class, encapsulating common book properties and behavior, 
+/// demonstrating inheritance by providing a foundation for derived book classes, 
+/// promoting polymorphism through virtual methods, 
+/// and utilizing abstraction to hide implementation details, 
+/// enabling extensibility and modularity through object-oriented design.
 /// </summary>
 public class BaseBook : IBook
 {

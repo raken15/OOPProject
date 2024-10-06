@@ -4,7 +4,11 @@ using OOPProject.Interfaces;
 namespace OOPProject.Classes;
 
 /// <summary>
-/// Class for a library member, for using Encapsulation and Inheritance OOP principle
+/// Defines the LibraryMember class, encapsulating common member properties and behavior, 
+/// demonstrating inheritance by providing a foundation for derived member classes, 
+/// promoting polymorphism through virtual methods, 
+/// and utilizing abstraction to hide implementation details, 
+/// enabling extensibility and modularity through object-oriented design.
 /// </summary>
 public class LibraryMember : IMember
 {
@@ -97,21 +101,42 @@ public class LibraryMember : IMember
 
     #endregion
     #region Public Methods
-    public void BorrowBook(IBook iBook)
+    public void BorrowBook(IBook iBook, Library library)
     {
         if(_borrowedIBooks.Contains(iBook)){
-            throw new InvalidOperationException("The book is already borrowed by this member");
+            Console.WriteLine($"Can't borrow book: The book is already borrowed by this member: (name: {Name}, email: {Email})");
+            return;
+        }
+        if(!library.Members.Contains(this)){
+            Console.WriteLine($"Can't borrow book: This member: (name: {Name}, email: {Email}) is not registered in this library");
+            return;
+        }
+        if(!library.Books.Contains(iBook)){
+            Console.WriteLine($"Can't borrow book: This book {iBook.Title} is not a property of this library");
+            return;
         }
         if(iBook.TryToBorrow()){
+            library.RemoveBookFromAvailableBooks(iBook);
             _borrowedIBooks.Add(iBook);
         }
     }
 
-    public void ReturnBook(IBook iBook)
+    public void ReturnBook(IBook iBook, Library library)
     {
-        if (!_borrowedIBooks.Contains(iBook))
-            throw new InvalidOperationException("The book is not borrowed by this member");
+        if (!_borrowedIBooks.Contains(iBook)){
+            Console.WriteLine($"Can't return book: The member: (name: {Name}, email: {Email}) didn't borrow this book {iBook.Title}");
+            return;
+        }
+        if(!library.Members.Contains(this)){
+            Console.WriteLine($"Can't return book: This member: (name: {Name}, email: {Email}) is not registered in this library");
+            return;
+        }
+        if(!library.Books.Contains(iBook)){
+            Console.WriteLine($"Can't return book: This book {iBook.Title} is not a property of this library");
+            return;
+        }
         iBook.ReturnToLibrary();
+        library.MakeBookAvailable(iBook);
         _borrowedIBooks.Remove(iBook);
     }
     public virtual void DisplayMember(){
