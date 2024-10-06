@@ -43,7 +43,7 @@ public class ChildrenBook : BaseBook
                 break;
         }
     }
-    public bool IsHappyEnding() => Ending == EndingEnum.Happy;
+    public bool HasHappyEnding() => Ending == EndingEnum.Happy;
     #endregion
 }
 #region Enums
