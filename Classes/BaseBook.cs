@@ -106,6 +106,8 @@ public class BaseBook : IBook
         Console.WriteLine($"Author: {Author}");
         Console.WriteLine($"Pages Amount: {PagesAmount}");
         Console.WriteLine($"Publish Date: {PublishDate}");
+        string isAvailable = IsAvailable ? "Yes" : "No";
+        Console.WriteLine($"Is it Available in the library: {isAvailable}");
     }
     #endregion
 
